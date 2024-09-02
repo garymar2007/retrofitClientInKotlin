@@ -1,0 +1,135 @@
+{
+  "uuid": "c5a549fc-1302-4d59-9872-f72d2091709f",
+  "lastMigration": 32,
+  "name": "LocalEnv",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 8090,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "bf23a45a-5d0f-462d-8747-d7feda4fb3db",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/users",
+      "responses": [
+        {
+          "uuid": "b50183b6-820c-47fc-b3a6-49b4831eaadd",
+          "body": "[\n  {\n    \"id\": 1234,\n    \"name\": \"some name\",\n    \"age\": 23\n  \n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "custom-header",
+              "value": "my own values"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "755b61a0-442b-48e1-b848-e8a3b35cb771",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/users",
+      "responses": [
+        {
+          "uuid": "6e81ab4f-be73-412e-8901-fe9ee9775a30",
+          "body": "{\n  \"message\": \"Upsss!\"\n}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [
+            {
+              "key": "custom-header",
+              "value": "my own values"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "bf23a45a-5d0f-462d-8747-d7feda4fb3db"
+    },
+    {
+      "type": "route",
+      "uuid": "755b61a0-442b-48e1-b848-e8a3b35cb771"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
