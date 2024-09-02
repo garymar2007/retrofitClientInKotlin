@@ -42,6 +42,10 @@ class UserService {
         }
     }
 
+    fun getUsersWithSort(sortBy: String) {
+        processUserResponse(userApi.getUsersWithSort(sortBy).execute())
+    }
+
     private fun processUserResponse(usersResponse: Response<List<User>>) {
         val successful = usersResponse.isSuccessful
         val httpStatusCode = usersResponse.code()

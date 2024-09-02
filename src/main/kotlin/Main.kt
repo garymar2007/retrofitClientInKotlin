@@ -10,5 +10,7 @@ fun main() {
 
 //    userService.dynamicGetUser("users")
 
-    userService.getUserById(1234)
+//    userService.getUserById(1234)
+
+     userService.getUsersWithSort("name")
 }

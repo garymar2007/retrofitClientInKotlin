@@ -27,4 +27,13 @@ interface UserApi {
 
     @GET("users/{id}")
     fun getUserById(@Path("id") id: Long): Call<User>
+
+    /**
+     * This endpoint is http://localhost:8090/v1/users?sort_by=name
+     * However, it requires http://localhost:8090/v1/users to be available
+     */
+    @GET("users")
+    fun getUsersWithSort(
+        @Query("sort_by") sortBy: String = "name"
+    ): Call<List<User>>
 }
