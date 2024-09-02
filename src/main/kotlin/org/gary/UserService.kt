@@ -27,6 +27,21 @@ class UserService {
         processUserResponse(userApi.dynamicGetUsers(url).execute())
     }
 
+    fun getUserById(id: Long) {
+        val userResponse = userApi.getUserById(id).execute()
+        val isSuccessful = userResponse.isSuccessful
+        if (isSuccessful) {
+            val user = userResponse.body()
+            println("User: $user")
+        } else {
+            val errorBody = userResponse.errorBody()
+            val errorResponse = errorBody?.let {
+                objectMapper.readValue(it.string(), ErrorResponse::class.java)
+            }
+            println("Error response: $errorResponse")
+        }
+    }
+
     private fun processUserResponse(usersResponse: Response<List<User>>) {
         val successful = usersResponse.isSuccessful
         val httpStatusCode = usersResponse.code()

@@ -8,5 +8,7 @@ fun main() {
 //    userService.headUsers()
 //    userService.deleteUsers()
 
-    userService.dynamicGetUser("users")
+//    userService.dynamicGetUser("users")
+
+    userService.getUserById(1234)
 }

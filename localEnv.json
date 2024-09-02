@@ -75,6 +75,40 @@
         }
       ],
       "responseMode": null
+    },
+    {
+      "uuid": "494844f6-5f72-471e-a197-676ee9e6fbb8",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "v1/users/1234",
+      "responses": [
+        {
+          "uuid": "cd701aae-aff8-4847-bee9-57c6d107cc77",
+          "body": "{\n    \"id\": 1234,\n    \"name\": \"some name\",\n    \"age\": 23\n  \n}\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "custom-header",
+              "value": "my own values"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
     }
   ],
   "rootChildren": [
@@ -85,6 +119,10 @@
     {
       "type": "route",
       "uuid": "755b61a0-442b-48e1-b848-e8a3b35cb771"
+    },
+    {
+      "type": "route",
+      "uuid": "494844f6-5f72-471e-a197-676ee9e6fbb8"
     }
   ],
   "proxyMode": false,

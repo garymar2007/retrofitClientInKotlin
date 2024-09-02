@@ -24,4 +24,7 @@ interface UserApi {
 
     @GET
     fun dynamicGetUsers(@Url url: String): Call<List<User>>
+
+    @GET("users/{id}")
+    fun getUserById(@Path("id") id: Long): Call<User>
 }
