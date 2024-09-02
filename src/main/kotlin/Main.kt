@@ -12,5 +12,7 @@ fun main() {
 
 //    userService.getUserById(1234)
 
-     userService.getUsersWithSort("name")
+//     userService.getUsersWithSort("name")
+    val parameters = mapOf("name" to "Gary", "age" to "23")
+    userService.getUsersWithDynamicQueryParams(parameters)
 }

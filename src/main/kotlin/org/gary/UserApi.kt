@@ -36,4 +36,9 @@ interface UserApi {
     fun getUsersWithSort(
         @Query("sort_by") sortBy: String = "name"
     ): Call<List<User>>
+
+    @GET("users")
+    fun getUsersWithDynamicQueryParams(
+        @QueryMap parameters: Map<String, String>
+    ): Call<List<User>>
 }

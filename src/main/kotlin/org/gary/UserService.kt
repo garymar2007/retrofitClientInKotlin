@@ -46,6 +46,10 @@ class UserService {
         processUserResponse(userApi.getUsersWithSort(sortBy).execute())
     }
 
+    fun getUsersWithDynamicQueryParams(parameters: Map<String, String>) {
+        processUserResponse(userApi.getUsersWithDynamicQueryParams(parameters).execute())
+    }
+
     private fun processUserResponse(usersResponse: Response<List<User>>) {
         val successful = usersResponse.isSuccessful
         val httpStatusCode = usersResponse.code()
