@@ -2,6 +2,7 @@ package org.gary.org.gary
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.gary.User
+import retrofit2.Response
 
 class UserService {
     private val retrofitClient = RetrofitClient.getClient()
@@ -9,9 +10,24 @@ class UserService {
     private val objectMapper = ObjectMapper()
 
     fun successfulUsersResponse() {
-        val usersResponse = userApi.getUsers()
-            .execute()
+        processUserResponse(userApi.getUsers()
+            .execute())
+    }
 
+    fun headUsers() {
+        val userService = userApi.headUsers()
+            .execute()
+    }
+
+    fun deleteUsers() {
+        userApi.deleteUser(User(123, "Gary", 23))
+    }
+
+    fun dynamicGetUser(url: String) {
+        processUserResponse(userApi.dynamicGetUsers(url).execute())
+    }
+
+    private fun processUserResponse(usersResponse: Response<List<User>>) {
         val successful = usersResponse.isSuccessful
         val httpStatusCode = usersResponse.code()
         val httpStatusMessage = usersResponse.message()
@@ -37,14 +53,5 @@ class UserService {
             }
             println("Error response: $errorResponse")
         }
-    }
-
-    fun headUsers() {
-        val userService = userApi.headUsers()
-            .execute()
-    }
-
-    fun deleteUsers() {
-        userApi.deleteUser(User(123, "Gary", 23))
     }
 }
