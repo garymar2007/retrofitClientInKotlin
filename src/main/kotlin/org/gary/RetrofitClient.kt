@@ -9,6 +9,7 @@ object RetrofitClient {
     private const val BASE_URL = "http://localhost:8090/v1/"
     private val intercept = OkHttpClient.Builder()
         .addInterceptor(LoggingInterceptor)
+        .addInterceptor(AuthorizationInterceptor)
         .build()
 
     fun getClient(): Retrofit =
