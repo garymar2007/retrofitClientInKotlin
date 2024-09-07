@@ -9,6 +9,10 @@ class UserService {
     private val userApi = retrofitClient.create(UserApi::class.java)
     private val objectMapper = ObjectMapper()
 
+    fun getUsers() {
+        processUserResponse(userApi.getUsers().execute())
+    }
+
     fun successfulUsersResponse() {
         processUserResponse(userApi.getUsers()
             .execute())

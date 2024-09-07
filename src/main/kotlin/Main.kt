@@ -24,10 +24,10 @@ fun main() {
 
 //    userService.getUsersWithAuth("Bearer some-token")
 //    userService.getUsersWithHeaderMap(mapOf("Authorization" to "Bearer another-token"))
-    val user: User = User(111, "Carol", 21)
-    userService.createUser(user)
+//    val user: User = User(111, "Carol", 21)
+//    userService.createUser(user)
 
-
+    userService.getUsers()
 
 
     //https://www.youtube.com/watch?v=lT3-NBWV9HU 37:00
