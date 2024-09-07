@@ -39,6 +39,10 @@ interface UserApi {
     ): Call<List<User>>
 
     @GET("users")
+    @Headers(value = [
+        "User-agent: retrofit-client-application",
+        "another-header: another-value",
+    ])
     fun getUsersWithDynamicQueryParams(
         @QueryMap parameters: Map<String, String>
     ): Call<List<User>>
