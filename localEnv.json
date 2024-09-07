@@ -171,14 +171,14 @@
       "uuid": "3eed6ab3-7fd4-4eec-9a3a-19cd7ee162c0",
       "type": "http",
       "documentation": "",
-      "method": "get",
-      "endpoint": "v1/users?sort_by=name",
+      "method": "post",
+      "endpoint": "v1/users",
       "responses": [
         {
           "uuid": "19932f7d-a42f-4fb4-a36c-3381f19c24ab",
-          "body": "[\n  {\n    \"id\": 1234,\n    \"name\": \"some name\",\n    \"age\": 23\n  }\n]",
+          "body": "",
           "latency": 0,
-          "statusCode": 200,
+          "statusCode": 201,
           "label": "",
           "headers": [
             {
@@ -190,7 +190,15 @@
           "filePath": "",
           "databucketID": "",
           "sendFileAsBody": false,
-          "rules": [],
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "",
+              "value": "{\"id\": 111, \"name\": \"Carol\", \"age\": 23}",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false,

@@ -15,9 +15,9 @@ interface UserApi {
     fun headUsers(): Call<Void>
 
     @POST("users")
-    fun createUser(user: User): Call<User>
+    fun createUser(@Body user: User): Call<Void>
 
-    fun updateUser(user: User): Call<User>
+    fun updateUser(@Body user: User): Call<User>
 
     @HTTP(method = "DELETE", path = "users", hasBody = true)
     //@DELETE("users") // This is not allowed if we use @Body as non-http method cannot use body

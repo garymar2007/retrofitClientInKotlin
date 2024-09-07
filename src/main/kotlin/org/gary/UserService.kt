@@ -54,6 +54,14 @@ class UserService {
         processUserResponse(userApi.getUsersWithAuth(auth).execute())
     }
 
+    fun createUser(user: User) {
+        val response = userApi.createUser(user).execute()
+        val isSuccessful = response.isSuccessful
+        println(response.code())
+        println(response.message())
+        println(isSuccessful)
+    }
+
     fun getUsersWithHeaderMap(authMap: Map<String, String>) {
         processUserResponse(userApi.getUsersWithHeaderMap(authMap).execute())
     }
