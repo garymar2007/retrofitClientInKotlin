@@ -49,4 +49,7 @@ interface UserApi {
 
     @GET("users")
     fun getUsersWithAuth(@Header("Authorization") auth: String): Call<List<User>>
+
+    @GET("users")
+    fun getUsersWithHeaderMap(@HeaderMap auth: Map<String, String>): Call<List<User>>
 }

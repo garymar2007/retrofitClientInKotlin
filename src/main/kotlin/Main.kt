@@ -22,6 +22,7 @@ fun main() {
 //    val parameters = mapOf("name" to "Gary", "age" to "23")
 //    userService.getUsersWithDynamicQueryParams(parameters)
 
-    userService.getUsersWithAuth("Bearer some-token")
+//    userService.getUsersWithAuth("Bearer some-token")
+    userService.getUsersWithHeaderMap(mapOf("Authorization" to "Bearer another-token"))
     //https://www.youtube.com/watch?v=lT3-NBWV9HU 37:00
 }

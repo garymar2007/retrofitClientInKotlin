@@ -54,6 +54,10 @@ class UserService {
         processUserResponse(userApi.getUsersWithAuth(auth).execute())
     }
 
+    fun getUsersWithHeaderMap(authMap: Map<String, String>) {
+        processUserResponse(userApi.getUsersWithHeaderMap(authMap).execute())
+    }
+
     private fun processUserResponse(usersResponse: Response<List<User>>) {
         val successful = usersResponse.isSuccessful
         val httpStatusCode = usersResponse.code()
