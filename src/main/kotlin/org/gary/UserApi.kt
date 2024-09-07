@@ -46,4 +46,7 @@ interface UserApi {
     fun getUsersWithDynamicQueryParams(
         @QueryMap parameters: Map<String, String>
     ): Call<List<User>>
+
+    @GET("users")
+    fun getUsersWithAuth(@Header("Authorization") auth: String): Call<List<User>>
 }

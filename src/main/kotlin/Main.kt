@@ -19,8 +19,9 @@ fun main() {
 //    userService.getUserById(1234)
 
 //     userService.getUsersWithSort("name")
-    val parameters = mapOf("name" to "Gary", "age" to "23")
-    userService.getUsersWithDynamicQueryParams(parameters)
+//    val parameters = mapOf("name" to "Gary", "age" to "23")
+//    userService.getUsersWithDynamicQueryParams(parameters)
 
+    userService.getUsersWithAuth("Bearer some-token")
     //https://www.youtube.com/watch?v=lT3-NBWV9HU 37:00
 }

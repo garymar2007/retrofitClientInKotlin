@@ -50,6 +50,10 @@ class UserService {
         processUserResponse(userApi.getUsersWithDynamicQueryParams(parameters).execute())
     }
 
+    fun getUsersWithAuth(auth: String) {
+        processUserResponse(userApi.getUsersWithAuth(auth).execute())
+    }
+
     private fun processUserResponse(usersResponse: Response<List<User>>) {
         val successful = usersResponse.isSuccessful
         val httpStatusCode = usersResponse.code()
