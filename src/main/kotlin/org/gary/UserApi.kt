@@ -52,4 +52,16 @@ interface UserApi {
 
     @GET("users")
     fun getUsersWithHeaderMap(@HeaderMap auth: Map<String, String>): Call<List<User>>
+
+    @POST("users")
+    @FormUrlEncoded
+    fun createUserWithFormUrlEncoded(
+        @Field("f1") fieldOneValue: String
+    ): Call<Void>
+
+    @POST("users")
+    @Multipart
+    fun createUserMultipart(
+        @Part("p1") part: RequestBody
+    ): Call<Void>
 }
