@@ -7,6 +7,7 @@ import retrofit2.http.*
 interface UserApi {
     @GET("users")   // auto-converted to http://localhost:8090/v1/users
     //@GET("http://localhost:8080/v1/users")   // overridde the baseUrl
+    //NB: @GET("/users") will be http://localhost:8090/users since "/" (root) is used
     //@HTTP(method = "GET", path = "users")
     fun getUsers(): Call<List<User>>
 
